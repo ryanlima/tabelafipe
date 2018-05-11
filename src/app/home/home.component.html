@@ -1,0 +1,102 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<div class="container">
+    <div class="row mt">
+        <div class="col-lg-6 col-lg-offset-3 centered">
+          <h1>Consulta Tabela Fipe</h1>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+            <button (click)="obterModelo(marcaSelecionada.id)">Consultar Modelos</button>
+        </div>
+        <div class="col-md-4">
+            <button (click)="obterAno(marcaSelecionada.id, modeloSelecionado.id )">Consultar Anos</button>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row mt">
+      
+        <div class="col-md-4">
+      
+          <label>SELECIONE A MARCA</label>
+          <select class="form-control" (change)="onChange($event)" [(ngModel)]="marcaSelecionada" (ngModelChange)="teste($event)" id="sel2">
+            <option >--Selecione--</option>
+            <option *ngFor="let marca of marcas"  [ngValue]="marca">
+              {{marca.name}} - {{marca.id}}
+            </option>
+          </select>
+        </div>
+        
+        <div class="col-md-4">
+          <label>SELECIONE O MODELO 
+          
+          </label>
+          <select class="form-control" [(ngModel)]="modeloSelecionado" id="sel2">
+            <option >--Selecione--</option>
+            <option *ngFor="let modelo of modelos" [ngValue]="modelo">
+              {{modelo.name}} - {{modelo.id}}
+            </option>
+          </select>
+        </div>
+      
+         
+        <div class="col-md-4">
+            <label>SELECIONE O ANO 
+            </label>
+            <select class="form-control" [(ngModel)]="anoSelecionado" id="sel2">
+              <option >--Selecione--</option>
+              <option *ngFor="let ano of anos" [ngValue]="ano">
+                {{ano.name}} - {{ano.id}}
+              </option>
+            </select>
+          </div>
+      
+          
+          <!--ui-select ng-model="veiculo.marca" on-select="consultarVeiculos($item)">
+            <ui-select-match>
+              {{$select.selected.name}}
+            </ui-select-match>
+            <ui-select-choices repeat="item in marcas | orderBy: 'name' | filter: $select.search">
+              <span ng-bind="item.name"></span>
+            </ui-select-choices>
+          </ui-select>
+      
+        </div>
+      
+        <div class="col-md-4">
+      
+          <label>SELECIONE O MODELO</label>
+          <ui-select ng-model="veiculo.modelo" on-select="consultarModelos($item)">
+            <ui-select-match>
+              {{$select.selected.name}}
+            </ui-select-match>
+            <ui-select-choices repeat="item in modelos | orderBy: 'name' | filter: $select.search">
+              <span ng-bind="item.name"></span>
+            </ui-select-choices>
+          </ui-select>
+      
+        </div>
+      
+        <div class="col-md-4">
+      
+          <label>SELECIONE O ANO DO MODELO</label>
+          <ui-select ng-model="veiculo.ano" on-select="consultarPreco($item)">
+            <ui-select-match>
+              {{$select.selected.name}}
+            </ui-select-match>
+            <ui-select-choices repeat="item in anoModelos | orderBy: 'name' | filter: $select.search">
+              <span ng-bind="item.name"></span>
+            </ui-select-choices>
+          </ui-select>
+      
+        </div-->
+      
+      </div>
+</div>
