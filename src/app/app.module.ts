@@ -7,14 +7,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ModelosComponent } from './modelos/modelos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ModelosComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -15,11 +15,18 @@ export class HomeComponent implements OnInit {
   marcas : Marca[] = Array();
   modelos : Modelo[] = Array();
   anos : Ano[] = Array() ;
-  dados : Dados;
-  marcaSelecionada : string;
-  id : string
+  dado : Dados = "";
+  marcaSelect : string;
+  modeloSelect : string;
+  anoSelect : string;
+  id : string;
 
-  constructor(private  FipeApi :FipeApiService) {
+  marca: string;
+  modelo: string;
+  ano: string;
+
+
+  constructor(private FipeApi :FipeApiService) {
       this.FipeApi.getMarcas()
       .subscribe(
           resposta => this.marcas = resposta
@@ -30,30 +37,32 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
     }
     selectMarca(marca) {
-      this.id= marca.id;
-      this.obterModelo(this.id);
+      this.marcaSelect = marca.id; 
+      this.marca = marca.name; 
+      this.obterModelo(this.marcaSelect);
       //console.log(marca);
     }
     
-    selectModelo(marca) {
-        this.id= marca.id;
-       this.obterModelo(this.id);
-        console.log(marca);
+    selectModelo(modelo) {
+        this.modeloSelect = modelo.id;
+        this.modelo = modelo.name;
+        this.obterAno(this.marcaSelect,this.modeloSelect)
+       // console.log(modelo);
     }
 
-    selectAno(marca) {
-        // this.id= marca.id;
-         //this.obterModelo(this.id);
-         console.log(marca);
+    selectAno(ano) {
+        this.anoSelect= ano.id;
+        this.ano = ano.name;
+        this.obterDados(this.marcaSelect,this.modeloSelect, this.anoSelect);
+         //console.log(marca);
      }
 
-    
+    //Consultas
     obterModelo(marcaSelecionada){
       this.FipeApi.getModelo(marcaSelecionada)
       .subscribe(
-          resposta => this.modelos = resposta
+            resposta => this.modelos = resposta
         );
-      
     }
 
     obterAno(marcaSelecionada,modeloSelecionado){
@@ -62,13 +71,14 @@ export class HomeComponent implements OnInit {
           resposta => this.anos = resposta
         );
     }
-/*
-    obterDados(marcaSelecionada : string,modeloSelecionado : string, anoSelecionado){
-          this.FipeApi.getMarcas()
+
+    obterDados(marcaSelecionada,modeloSelecionado, anoSelecionado){
+          this.FipeApi.getDados(marcaSelecionada,modeloSelecionado,anoSelecionado)
           .subscribe(
-              resposta => this.dados = resposta
+              resposta => this.dado = resposta
+              
         );
     }
 
-*/
+
 }
