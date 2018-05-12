@@ -26,9 +26,9 @@
         <div class="col-md-4">
       
           <label>SELECIONE A MARCA</label>
-          <select class="form-control" (change)="onChange($event)" [(ngModel)]="marcaSelecionada" (ngModelChange)="teste($event)" id="sel2">
+          <select class="form-control"  [(ngModel)]="marcaSelecionada" (ngModelChange)="selectMarca($event)" id="sel2">
             <option >--Selecione--</option>
-            <option *ngFor="let marca of marcas"  [ngValue]="marca">
+            <option *ngFor="let marca of marcas" [ngValue]="marca">
               {{marca.name}} - {{marca.id}}
             </option>
           </select>
@@ -38,7 +38,7 @@
           <label>SELECIONE O MODELO 
           
           </label>
-          <select class="form-control" [(ngModel)]="modeloSelecionado" id="sel2">
+          <select class="form-control" [(ngModel)]="modeloSelecionado" (ngModelChange)="selectModelo($event)" id="sel2">
             <option >--Selecione--</option>
             <option *ngFor="let modelo of modelos" [ngValue]="modelo">
               {{modelo.name}} - {{modelo.id}}
@@ -50,7 +50,7 @@
         <div class="col-md-4">
             <label>SELECIONE O ANO 
             </label>
-            <select class="form-control" [(ngModel)]="anoSelecionado" id="sel2">
+            <select class="form-control" [(ngModel)]="anoSelecionado" (ngModelChange)="selectAno($event)" id="sel2">
               <option >--Selecione--</option>
               <option *ngFor="let ano of anos" [ngValue]="ano">
                 {{ano.name}} - {{ano.id}}

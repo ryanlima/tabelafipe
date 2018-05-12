@@ -29,16 +29,25 @@ export class HomeComponent implements OnInit {
    }
     ngOnInit() {
     }
-    teste(marca_id) {
-      this.id= marca_id;
+    selectMarca(marca) {
+      this.id= marca.id;
       this.obterModelo(this.id);
+      //console.log(marca);
     }
     
-    public onChange(event): void {  // event will give you full breif of action
-        const newVal = event.target.value;
-        console.log(newVal);
-      }
+    selectModelo(marca) {
+        this.id= marca.id;
+       this.obterModelo(this.id);
+        console.log(marca);
+    }
 
+    selectAno(marca) {
+        // this.id= marca.id;
+         //this.obterModelo(this.id);
+         console.log(marca);
+     }
+
+    
     obterModelo(marcaSelecionada){
       this.FipeApi.getModelo(marcaSelecionada)
       .subscribe(
