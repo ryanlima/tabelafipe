@@ -1,86 +1,94 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
-<div class="container">
-    <div class="row mt">
-        <div class="col-lg-6 col-lg-offset-3 centered">
-          <h1>Consulta Tabela Fipe</h1>
-          <hr>
+<div class="container-fluid">
+    <div class="row titulo">
+        <div class="col-lg-6 col-lg-offset-3" >
+          <h1 class="text-center ">Consulta Tabela Fipe</h1>
+          
           </div>
     </div>
+</div>
+<hr>
+<div class="container">
 
-    <div class="row">
-      
-        <div class="col-md-4">
-          <label>SELECIONE A MARCA</label>
-          <select class="form-control"  [(ngModel)]="marcaSelecionada" (ngModelChange)="selectMarca($event)" id="sel2">
-            <option >--Selecione--</option>
-            <option *ngFor="let marca of marcas" [ngValue]="marca">
-              {{marca.name}}
-            </option>
-          </select>
-        </div>
-        
-        <div class="col-md-4">
-          <label>SELECIONE O MODELO</label>
-          <select class="form-control" [(ngModel)]="modeloSelecionado" (ngModelChange)="selectModelo($event)" id="sel2">
-            <option >--Selecione--</option>
-            <option *ngFor="let modelo of modelos" [ngValue]="modelo">
-              {{modelo.name}}
-            </option>
-          </select>
-        </div>
-      
-         
-        <div class="col-md-4">
-            <label>SELECIONE O ANO</label>
-            <select class="form-control" [(ngModel)]="anoSelecionado" (ngModelChange)="selectAno($event)" id="sel2">
-              <option >--Selecione--</option>
-              <option *ngFor="let ano of anos" [ngValue]="ano">
-                {{ano.name}}
-              </option>
-            </select>
-        </div>
-      
-      </div>
-      <div class="row">
-        <fieldset>
-          <legend>Dados Fipe</legend>
-          <div class="row">
-                <div class="form-group col-md-4">
-                  <label>Marca</label>
-                  <input type="text" [(ngModel)]="marca" class="form-control" disabled/>
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Modelo</label>
-                    <input type="text" [(ngModel)]="modelo" class="form-control" disabled/>
-                </div>
-                <div class="form-group col-md-4">
-                  <label>Ano</label>
-                  <input type="text" [(ngModel)]="ano" class="form-control" disabled/>
-                </div>
-          </div>
+
+
+<div class="container">
+  <div class="row">
   
-          <div class="row">
-              <div class="form-group col-md-4">
-                <label>Código Fipe</label>
-                <input type="text" [(ngModel)]="dado.fipe_codigo" class="form-control"  readonly/>
-              </div>
-              <div class="form-group col-md-4">
-                <label>Preço</label>
-                <input type="text" [(ngModel)]="dado.preco" class="form-control" disabled/>
-              </div>
-              <div class="form-group col-md-4">
-                <label>Refer&ecirc;ncia</label>
-                <input type="text" [(ngModel)]="dado.referencia" class="form-control" disabled/>
-              </div>
-          </div>
-  
-        </fieldset>
-      </div>
+    <div class="col-md-4">
+      <label>SELECIONE A MARCA</label>
+      <select class="form-control"  [(ngModel)]="marcaSelecionada" (ngModelChange)="selectMarca($event)" id="sel2">
+        <option >--Selecione--</option>
+        <option *ngFor="let marca of marcas" [ngValue]="marca">
+          {{marca.name}}
+        </option>
+      </select>
+    </div>
     
+    <div class="col-md-4">
+      <label>SELECIONE O MODELO</label>
+      <select class="form-control" [(ngModel)]="modeloSelecionado" (ngModelChange)="selectModelo($event)" id="sel2">
+        <option >--Selecione--</option>
+        <option *ngFor="let modelo of modelos" [ngValue]="modelo">
+          {{modelo.name}}
+        </option>
+      </select>
+    </div>
+  
+     
+    <div class="col-md-4">
+        <label>SELECIONE O ANO</label>
+        <select class="form-control" [(ngModel)]="anoSelecionado" (ngModelChange)="selectAno($event)" id="sel2">
+          <option >--Selecione--</option>
+          <option *ngFor="let ano of anos" [ngValue]="ano">
+            {{ano.name}}
+          </option>
+        </select>
+    </div>
+  </div>
+</div>
+
+  
+    <div class="container">
+          <div class="dados">
+              <div class="well">
+            <legend>Dados Fipe</legend>
+            <div class="row">
+                  <div class="form-group col-md-4">
+                    <label>Marca</label>
+                    <input type="text" [(ngModel)]="marca" class="form-control" disabled/>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <label>Modelo</label>
+                      <input type="text" [(ngModel)]="modelo" class="form-control" disabled/>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Ano</label>
+                    <input type="text" [(ngModel)]="ano" class="form-control" disabled/>
+                  </div>
+            </div>
+    
+            <div class="row">
+                <div class="form-group col-md-3">
+                  <label>Código Fipe</label>
+                  <input type="text" [(ngModel)]="dado.fipe_codigo" class="form-control"  readonly/>
+                </div>
+                <div class="form-group col-md-3">
+                  <label>Preço</label>
+                  <input type="text" [(ngModel)]="dado.preco" class="form-control" disabled/>
+                </div>
+                <div class="form-group col-md-3">
+                  <label>Refer&ecirc;ncia</label>
+                  <input type="text" [(ngModel)]="dado.referencia" class="form-control" disabled/>
+                </div>
+                <div class="form-group col-md-3">
+                  <label>Combustivel</label>
+                  <input type="text" [(ngModel)]="dado.combustivel" class="form-control"  readonly/>
+                </div>
+            </div>
+          </div>
+        
+      </div>    
+    </div>    
+
+
 </div>

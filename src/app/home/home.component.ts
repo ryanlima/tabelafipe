@@ -75,8 +75,7 @@ export class HomeComponent implements OnInit {
     obterDados(marcaSelecionada,modeloSelecionado, anoSelecionado){
           this.FipeApi.getDados(marcaSelecionada,modeloSelecionado,anoSelecionado)
           .subscribe(
-              resposta => this.dado = resposta
-              
+              resposta => this.dado = resposta     
         );
     }
 
