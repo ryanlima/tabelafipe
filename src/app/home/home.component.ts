@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
   modeloSelect : string;
   anoSelect : string;
   id : string;
-
   marca: string;
   modelo: string;
   ano: string;
