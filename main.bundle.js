@@ -135,17 +135,17 @@ var FipeApiService = /** @class */ (function () {
         this.http = http;
     }
     FipeApiService.prototype.getMarcas = function () {
-        return this.http.get('http://fipeapi.appspot.com/api/1/carros/marcas.json');
+        return this.http.get('https://fipeapi.appspot.com/api/1/carros/marcas.json');
     };
     FipeApiService.prototype.getModelo = function (id_marca) {
-        return this.http.get('http://fipeapi.appspot.com/api/1/carros/veiculos/' + id_marca + '.json');
+        return this.http.get('https://fipeapi.appspot.com/api/1/carros/veiculos/' + id_marca + '.json');
     };
     FipeApiService.prototype.getAno = function (id_marca, id_modelo) {
-        //console.log('http://fipeapi.appspot.com/api/1/carros/veiculo/'+id_marca+'/'+id_modelo+'.json');
-        return this.http.get('http://fipeapi.appspot.com/api/1/carros/veiculo/' + id_marca + '/' + id_modelo + '.json');
+        //console.log('https://fipeapi.appspot.com/api/1/carros/veiculo/'+id_marca+'/'+id_modelo+'.json');
+        return this.http.get('https://fipeapi.appspot.com/api/1/carros/veiculo/' + id_marca + '/' + id_modelo + '.json');
     };
     FipeApiService.prototype.getDados = function (id_marca, id_modelo, id_ano) {
-        return this.http.get('http://fipeapi.appspot.com/api/1/carros/veiculo/' + id_marca + '/' + id_modelo + '/' + id_ano + '.json');
+        return this.http.get('https://fipeapi.appspot.com/api/1/carros/veiculo/' + id_marca + '/' + id_modelo + '/' + id_ano + '.json');
     };
     FipeApiService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
