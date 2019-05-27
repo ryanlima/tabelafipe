@@ -10,8 +10,12 @@
     ]
   },
   "files": [
+<<<<<<< HEAD
     "test.ts",
     "polyfills.ts"
+=======
+    "test.ts"
+>>>>>>> c65d776d5e2e6066a891eb2e63759340795d0b62
   ],
   "include": [
     "**/*.spec.ts",

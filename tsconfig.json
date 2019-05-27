@@ -1,7 +1,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+<<<<<<< HEAD
     "importHelpers": true,
+=======
+>>>>>>> c65d776d5e2e6066a891eb2e63759340795d0b62
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -15,8 +18,14 @@
     "lib": [
       "es2017",
       "dom"
+<<<<<<< HEAD
     ],
     "module": "es2015",
     "baseUrl": "./"
   }
 }
+=======
+    ]
+  }
+}
+>>>>>>> c65d776d5e2e6066a891eb2e63759340795d0b62

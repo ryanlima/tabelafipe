@@ -18,6 +18,10 @@
     "forin": true,
     "import-blacklist": [
       true,
+<<<<<<< HEAD
+=======
+      "rxjs",
+>>>>>>> c65d776d5e2e6066a891eb2e63759340795d0b62
       "rxjs/Rx"
     ],
     "import-spacing": true,
